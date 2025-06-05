@@ -1,0 +1,56 @@
+plugins {
+    id "com.android.application"
+    id 'com.google.gms.google-services'
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.meditrack_new"
+
+    compileSdk = 35 // Set specific version instead of using flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8 // Change to 1.8 for compatibility
+        targetCompatibility = JavaVersion.VERSION_1_8 // Change to 1.8 for compatibility
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8" // Change to 1.8 for compatibility
+    }
+
+    defaultConfig {
+        manifestPlaceholders = [applicationName: "io.flutter.app.FlutterApplication"]
+        applicationId = "com.example.meditrack_new"
+        minSdk = 23 // Set this explicitly rather than using flutter.minSdkVersion
+        targetSdk = 35 // Set specific version
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+
+        // Add this to override namespace for cloud_firestore
+        manifestPlaceholders = [
+                'package': 'com.example.meditrack_new'
+        ]
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    // Add this to avoid namespace conflicts
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+}
+
+flutter {
+    source = "../.."
+}
