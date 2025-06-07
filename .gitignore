@@ -16,6 +16,11 @@ migrate_working_dir/
 *.iws
 .idea/
 
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
 # Flutter/Dart/Pub related
 **/doc/api/
 .dart_tool/
@@ -26,33 +31,72 @@ migrate_working_dir/
 .pub/
 /build/
 
-# Android Studio build artifacts
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
 /android/app/debug
 /android/app/profile
 /android/app/release
-/android/.gradle/
-/android/app/build/
-/android/build/
-/android/local.properties
-/android/gradle/
 
-# Firebase sensitive files
-/android/app/google-services.json
-/lib/firebase_options.dart
+# Coverage
+coverage/
 
-# Exclude iOS, Web, Windows, Linux, macOS
-/ios/
-/web/
-/windows/
-/linux/
-/macos/
+# Exceptions to above rules.
+!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 
-# Generated files
-**/*.g.dart
-**/*.freezed.dart
+# Firebase related - SENSITIVE FILES (Android only)
+android/app/google-services.json
+lib/core/firebase_options.dart
 
-# Environment files
-.env*
+# API Keys and Environment files
+.env
+.env.local
+.env.production
+.env.staging
+*.env
 
-# Test related
-/test/
+# Android local configuration files
+android/local.properties
+android/key.properties
+
+# Generated files (Android)
+**/android/app/src/main/java/**/R.java
+**/android/app/src/main/java/**/Manifest.java
+**/android/app/src/main/java/**/BuildConfig.java
+
+# Gradle related
+**/.gradle/
+**/gradle-wrapper.jar
+
+# Android Keystore files
+*.jks
+*.keystore
+*.p12
+*.key
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Editor/IDE specific
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS generated
+Thumbs.db
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Flutter build artifacts
+**/build/
