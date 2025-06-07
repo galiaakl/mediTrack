@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:provider/provider.dart';
-// Import your actual first screen
 import 'package:meditrack_new/screens/onboarding/first_screen.dart'; // Update this to your actual splash screen
 import 'package:meditrack_new/screens/auth/reset_password.dart';
 import 'package:meditrack_new/services/auth_service.dart';
@@ -40,13 +39,13 @@ void _handleDynamicLink(PendingDynamicLinkData? data) {
   }
 
   final Uri deepLink = data.link;
-  print('📱 Got deep link: ${deepLink.toString()}');
+  print('Got deep link: ${deepLink.toString()}');
 
   // Handle password reset link
   if (deepLink.pathSegments.contains('resetPassword')) {
     // Extract the OOB code from query parameters
     final oobCode = deepLink.queryParameters['oobCode'];
-    print('🔑 Got oobCode from link: $oobCode');
+    print('Got oobCode from link: $oobCode');
 
     if (oobCode != null) {
       // We'll use a delay to ensure the app is fully initialized
@@ -58,7 +57,7 @@ void _handleDynamicLink(PendingDynamicLinkData? data) {
             ),
           );
         } else {
-          print('⚠️ Navigator state is null, cannot navigate to ResetPasswordPage');
+          print('Navigator state is null, cannot navigate to ResetPasswordPage');
         }
       });
     }
