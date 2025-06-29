@@ -1,16 +1,5 @@
-# meditrack_new
+## Introduction
+This guide aims at documenting the technologies and techniques employed for the design of MediTrack, a smart healthcare app designed to connect users to medical services in real-time, whether they’re looking for a doctor, a pharmacy, or need immediate emergency assistance. Through the focus on the practicality of this app, one can ensure smooth and quick navigation and effective access to all needed medical guidance with emergency cases and pressing medical needs in mind.
+This manual will provide detailed explanation of the app implementation, from frontend development, all the way through Backend engineering. The tools and methods deployed will also be discussed and illustrated.
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# App Overview and Objectives
