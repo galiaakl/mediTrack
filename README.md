@@ -34,15 +34,18 @@ A detailed explanation will be provided of the app implementation, from frontend
 MediTrack is a mobile application, developed for deployment on the Android operating system. 
 This app serves the public — including patients, parents, seniors and even travelers — and the professionals who want better visibility and organization. 
 
-Powered by a user-friendly interface and a practical usage workflow, this app’s key features include:
-🔐 Secure Authentication    🏥 Healthcare Discovery    🚨 Emergency Services
-👥 User Management         📅 Appointment Booking     🗺️ Location Services  
-💬 Support System          📱 Mobile Optimized        🔄 Real-time Updates
+Powered by a user-friendly interface and a practical usage workflow, this app’s key features include:   
+🔐 Secure Authentication    🏥 Healthcare Discovery    🚨 Emergency Services   
+👥 User Management         📅 Appointment Booking      🗺️ Location Services  
+💬 Support System          📱 Mobile Optimized        🔄 Real-time Updates 
 
 ## 👤 1) _For regular users_
 - **One-tap emergency access:** users can, without any prior knowledge of the nearest red cross or civil defense stations and their availability or hotlines, dial these services directly and practically through a clear, easy-to-access emergency button that connects them directly to their nearest station. Information about the patient, collected as part of the user’s sign-up process, would be immediately shared with the emergency service for convenience and time saving in dire situations.
+  
 - **Live-Map and navigation:** the app provides real-time access to the map, with exclusive display of medical facilities and listing of their respective services, a function that might not be fulfilled on regular maps service providers for medical search convenience. Users can locate nearby facilities -hospitals, emergency centers, specialized care centers-, pharmacies, and healthcare specialists’ private clinics, with real-time filters like “open now”, “available medications”, and “speciality”.
+  
 - **Medical Doctor Booking System:** users can filter providers by their specialities, years of experience, and location at their convenience. They are offered various booking methods for their clinical appointments, depending on each healthcare professional’s preference and offered options. Patients are also offered a schedule-visualization feature, where they are allowed to view all bookings made through the app.
+  
 - **User profiles:** patients can store medical history, allergies, medications, and emergency contact details – especially useful if unconscious or in crisis.
 
 ## 🧑‍⚕️2) _For medical professionals_
@@ -50,15 +53,15 @@ Powered by a user-friendly interface and a practical usage workflow, this app’
 
 📸 Screenshots
 <p align="center">
-<img src="assets/welcome_login.png" width="200"> <img src="assets/home_emergency.png" width="200"> <img src="assets/onboarding.png" width="200">
+<img src="assets/AuthMain.png" width="200"> <img src="assets/ChooseProfession.png" width="200"> <img src="assets/HomePage.png" width="200">
 <br><sub><b>Welcome & Login</b> • <b>Home Dashboard</b> • <b>User Onboarding</b></sub>
 </p>
 <p align="center">
-<img src="assets/home_dashboard.png" width="200"> <img src="assets/doctor_profile.png" width="200"> <img src="assets/emergency_alert.png" width="200">
+<img src="assets/Emergency.png" width="200"> <img src="assets/ChooseDoctor.png" width="200"> <img src="assets/DoctorInfo.png" width="200">
 <br><sub><b>Healthcare Services</b> • <b>Doctor Profiles</b> • <b>Emergency Alert</b></sub>
 </p>
 <p align="center">
-<img src="assets/maps_interface.png" width="200">
+<img src="assets/Maps.png" width="200">
 <br><sub><b>Interactive Maps & Location Services</b></sub>
 </p>
 
@@ -118,7 +121,7 @@ Navigation is segregated by role (regular user vs. healthcare professional), whe
        
     9) A _**“users”**_ collection to handle overall users credentials.
    
-All fields in these collections will be **automatically** filled when the developer enters them on the Android emulator as seen below. 
+All fields in these collections will be **automatically** filled when the developer enters them on the Android emulator as seen below.  
 ![Alt Text](assets/Firestore1.png)
 ![Alt Text](assets/Firestore2.png)
 ![Alt Text](assets/Firestore3.png)
