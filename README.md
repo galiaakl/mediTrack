@@ -3,6 +3,27 @@
   <img src="assets/SplashScreen.png" alt="Logo" width="300"/>
 </p>
 
+<details>
+<summary>📑 Table of Contents (click to expand)</summary>
+
+- [🩺 Introduction](#-introduction)
+- [🎯 App Overview and Objectives](#-app-overview-and-objectives)
+  - [👤 1) _For regular users_](#-1-for-regular-users)
+  - [🧑‍⚕️ 2) _For medical professionals_](#%EF%B8%8F2-for-medical-professionals)
+- [🧭 App Navigation Flow](#app-navigation-flow)
+  - [🔐 1) _Sign Up/Log In_](#-1-sign-uplog-in)
+  - [🧰 2) _Other Services_](#-2-other-services)
+- [🛠️ Technologies Used](#%EF%B8%8F-technologies-used)
+  - [1) _Frontend Development_](#1-frontend-development)
+  - [2) _Backend Development_](#2-backend-development)
+    - [🔧 Technologies Overview](#-technologies-overview)
+    - [🔒 User Authentication](#-user-authentication)
+    - [🧾 Database Management](#-database-management)
+    - [📂 Profile Picture Handling and Storage](#-profile-picture-handling-and-storage)
+
+</details>
+
+
 # 🩺 Introduction
 This guide aims at documenting the technologies and techniques employed for the design of MediTrack, a smart healthcare app designed to **connect users to medical services in real-time**, whether they’re looking for a doctor, a pharmacy, or need immediate emergency assistance. Through the focus on the practicality of this app, one can ensure smooth and quick navigation and effective access to all needed medical guidance with emergency cases and pressing medical needs in mind.
 A detailed explanation will be provided of the app implementation, from frontend development, all the way through Backend engineering. The tools and methods deployed will also be discussed and illustrated.
@@ -24,7 +45,7 @@ Powered by a user-friendly interface and a practical usage workflow, this app’
 # App Navigation Flow
 ## 🔐 1) _Sign Up/Log In_
 Below is a detailed pipeline explaining the process of signing or logging in, both for a regular user and a healthcare professional.
-![image](https://github.com/user-attachments/assets/53ac6d07-729c-4826-9d09-01a5809c545b)
+![Alt Text](assets/AuthFlowChart.png)
 
 ❗The process illustrated below can be tested on the emulator, and the app does not offer the option of usage without going through the Log In, SignUp pages and process. This should be implemented at later stages. However, for the current development stage, this will not be deployed. The current demonstration on the emulator is designed to showcase the process for a first-time usage of the app.
 
@@ -77,13 +98,12 @@ Navigation is segregated by role (regular user vs. healthcare professional), whe
        
     9) A _**“users”**_ collection to handle overall users credentials.
    
-All fields in these collections will be **automatically** filled when the developer enters them on the Android emulator
-
-<img src="[https://raw.githubusercontent.com/yourusername/yourrepo/main/image.png](https://github.com/user-attachments/assets/be77afd6-5b87-4f6a-860f-51212177450b)" width="400"/>
-
-
-![image](https://github.com/user-attachments/assets/bde8a793-bb1f-4798-b86c-35a031cabeb1)
-
+All fields in these collections will be **automatically** filled when the developer enters them on the Android emulator as seen below.
+![Alt Text](assets/Firestore1.png)
+![Alt Text](assets/Firestore2.png)
+![Alt Text](assets/Firestore3.png)
+![Alt Text](assets/Firestore4.png)
+![Alt Text](assets/Firestore5.png)
 
 - ### 📂 Profile Picture handling and storage:
 MediTrack utilizes the ImagePicker plugin to capture and select images from the emulator’s built-in Google “Photos” application, while also implementing custom encoding/decoding mechanisms for image storage optimization. Image URL’s will also be stored in a local database created for that purpose.
