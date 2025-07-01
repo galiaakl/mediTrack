@@ -20,7 +20,9 @@
     - [🔒 User Authentication](#-user-authentication)
     - [🧾 Database Management](#-database-management)
     - [📂 Profile Picture Handling and Storage](#-profile-picture-handling-and-storage)
-
+- [🚀 Getting Started](#-getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
 </details>
 
 
@@ -98,7 +100,7 @@ Navigation is segregated by role (regular user vs. healthcare professional), whe
        
     9) A _**“users”**_ collection to handle overall users credentials.
    
-All fields in these collections will be **automatically** filled when the developer enters them on the Android emulator as seen below.
+All fields in these collections will be **automatically** filled when the developer enters them on the Android emulator as seen below. 
 ![Alt Text](assets/Firestore1.png)
 ![Alt Text](assets/Firestore2.png)
 ![Alt Text](assets/Firestore3.png)
@@ -107,3 +109,62 @@ All fields in these collections will be **automatically** filled when the develo
 
 - ### 📂 Profile Picture handling and storage:
 MediTrack utilizes the ImagePicker plugin to capture and select images from the emulator’s built-in Google “Photos” application, while also implementing custom encoding/decoding mechanisms for image storage optimization. Image URL’s will also be stored in a local database created for that purpose.
+
+# 🚀 Getting Started
+
+## Prerequisites
+
+* **Flutter SDK** (3.0+)
+* **Dart SDK** (3.0+)
+* **Android Studio** or **VS Code**
+* **Android device** or **emulator** (API level 21+)
+* **Firebase account** and project setup
+
+## Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/meditrack_new.git
+cd meditrack_new
+```
+
+### 2. Install dependencies
+
+```bash
+flutter pub get
+```
+
+### 3. Firebase Configuration
+
+a. Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
+
+b. Add an Android app to your project with package name: `com.example.meditrack_new`
+
+c. Download `google-services.json` and configure:
+
+```bash
+# Copy the template
+cp android/app/google-services.json.template android/app/google-services.json
+
+# Replace the template content with your actual Firebase configuration
+```
+
+d. Configure Firebase options:
+
+```bash
+# Copy the template
+cp lib/core/config/firebase_options.dart.template lib/core/firebase_options.dart
+
+# Update with your Firebase project configuration
+```
+
+### 4. Run the application
+
+```bash
+# For debug build
+flutter run
+
+# For release build
+flutter run --release
+```
