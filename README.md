@@ -1,5 +1,7 @@
 <h1 align="center">MediTrack</h1>
-
+<p align="center">
+  <img src="assets/SplashScreen.png" alt="Logo" width="300"/>
+</p>
 
 # 🩺 Introduction
 This guide aims at documenting the technologies and techniques employed for the design of MediTrack, a smart healthcare app designed to **connect users to medical services in real-time**, whether they’re looking for a doctor, a pharmacy, or need immediate emergency assistance. Through the focus on the practicality of this app, one can ensure smooth and quick navigation and effective access to all needed medical guidance with emergency cases and pressing medical needs in mind.
@@ -20,7 +22,7 @@ Powered by a user-friendly interface and a practical usage workflow, this app’
 -	**Appointment Services:** Doctors can select their preferred methods of booking -regular calls, WhatsApp messaging, email services, MediTrack scheduling services-. They are granted access to the users’ medical profile for fast consultations and recommendations for the situation’s severity does not imply any need for physical appointment.
 
 # App Navigation Flow
-## 🔐 1) _SignUp/LogIn_
+## 🔐 1) _Sign Up/Log In_
 Below is a detailed pipeline explaining the process of signing or logging in, both for a regular user and a healthcare professional.
 ![image](https://github.com/user-attachments/assets/53ac6d07-729c-4826-9d09-01a5809c545b)
 
@@ -29,11 +31,11 @@ Below is a detailed pipeline explaining the process of signing or logging in, bo
 
 ## 🧰 2) _Other Services_
 As detailed in the flowchart, users are directed to:
--	“Home Page” if they register as regular users
--	“Doctor Profile Page” if they register as healthcare professionals
+-	**“Home Page”** if they register as regular users
+-	**“Doctor Profile Page”** if they register as healthcare professionals
 All other services, discussed in the “App Overview and Objectives Section” can then be accessed from each of the two pages mentioned above, based on the app user’s identity. Please run the emulator to experiment with the routing and features.
 
-# Technologies Used
+# 🛠️ Technologies Used
 This app is intended to be a mobile application to be compatible with the **Android Operating System** exclusively. For that, **Android Studio** was chosen as the tool for development and testing, although native code is yet to be added for the final, fully functional version of the app.
 
 ## 1) _Frontend Development_
@@ -43,32 +45,45 @@ MediTrack employs the **Provider package**, facilitating efficient app-wide stat
 
 ## 2) _Backend Development_
 The following technologies and platforms were adopted for backend engineering:
-- _Technologies Overview_
+- ### 🔧 Technologies Overview
   - **Mimimum Android Version Supported:** Android 6.0, Marshmallow Platform (98% of devices in current use)
   - **Target Android Version:** Android 14.0
   - **Android SDK version used for compilation:** 35
  
-- _User Authentication_
+- ### 🔒 User Authentication
   -	**Platform used for implementation:** Google Firebase and Google Firestore
+    
   -	**Authentication methods supported:** email/ password with email-only user verification, Google Sign-In integration (the user can choose to sign in with google using a saved google account on the emulator’s local integrated Gmail application). Healthcare professionals require specialty and license info.
+    
   -	**User Role-Based Authentication:**
-The app implements a sophisticated role-based access control (RBAC) to manage distinct user journeys. The designed architecture employs a hierarchical data model where the registration workflow starts with Firebase Auth for core identity management, and role-based metadata is stored in Cloud Firestore (NoSQL distributed database) under three collections: 1) users, 2) healthcare_providers and 3) regular_users.
-  - **User Role-Based Navigation:**
-Navigation is segregated by role (regular user vs. healthcare professional), where routing and conditional UI rendering is done based on a userRole parameter passed through the app flow
-Session Management use JWT tokens from Firebase where role info is embedded in custom claims
+The app implements a sophisticated role-based access control (RBAC) to manage distinct user journeys. The designed architecture employs a **hierarchical data model** where the registration workflow starts with **Firebase Auth** for core identity management, and **role-based metadata is stored in Cloud Firestore** (NoSQL distributed database) under three collections: 1) users, 2) healthcare_providers and 3) regular_users.
 
-- _Database management_
+  - **User Role-Based Navigation:**
+Navigation is segregated by role (regular user vs. healthcare professional), where routing and **conditional UI rendering** is done based on a _**userRole**_ parameter passed through the app flow.
+**Session Management** use JWT tokens from Firebase where role info is embedded in custom claims
+
+- ### 🧾 Database management
   - **Database Operations:** uses batch write operations during registration to ensure data consistency
  
   - **Firestore Collections:**
     1) Regular user credentials and information (information storage not yet implemented): stored in the _**“regular_users”**_ collection
-    2) Healthcare professionals credentials and required information: stored in the _**“healthcare_providers”**_ collection
-    3) Doctors information for the “Book an appointment” page: stored in the _**“doctors”**_ collection.
-     ❗This collection was created separately from the healthcare_providers collection just for visualization of the “Book and Appointment” page, where a small database needed to be created to allow active search and results display
-    5) Verification codes and verification states saved for the authenticated healthcare providers: stored in the _**“verification_codes”**_ collection
-    6) A _**“users”**_ collection to handle overall users credentials.
-   
-All fields in these collections will be _**automatically**_ filled when the developer enters them on the Android emulator
+       
+    3) Healthcare professionals credentials and required information: stored in the _**“healthcare_providers”**_ collection
+       
+    5) Doctors information for the “Book an appointment” page: stored in the _**“doctors”**_ collection.
+     ❗This collection was created separately from the healthcare_providers collection just for visualization of the “Book and Appointment” page, where a small database needed to be created to allow active search and results display ❗
 
-- **Profile Picture handling and storage:**
+    7) Verification codes and verification states saved for the authenticated healthcare providers: stored in the _**“verification_codes”**_ collection
+       
+    9) A _**“users”**_ collection to handle overall users credentials.
+   
+All fields in these collections will be **automatically** filled when the developer enters them on the Android emulator
+
+<img src="[https://raw.githubusercontent.com/yourusername/yourrepo/main/image.png](https://github.com/user-attachments/assets/be77afd6-5b87-4f6a-860f-51212177450b)" width="400"/>
+
+
+![image](https://github.com/user-attachments/assets/bde8a793-bb1f-4798-b86c-35a031cabeb1)
+
+
+- ### 📂 Profile Picture handling and storage:
 MediTrack utilizes the ImagePicker plugin to capture and select images from the emulator’s built-in Google “Photos” application, while also implementing custom encoding/decoding mechanisms for image storage optimization. Image URL’s will also be stored in a local database created for that purpose.
