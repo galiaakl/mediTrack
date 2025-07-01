@@ -116,8 +116,8 @@ MediTrack utilizes the ImagePicker plugin to capture and select images from the 
 
 * **Flutter SDK** (3.0+)
 * **Dart SDK** (3.0+)
-* **Android Studio** or **VS Code**
-* **Android device** or **emulator** (API level 21+)
+* **Android Studio**
+* **Android device** or **emulator** (API level 23+)
 * **Firebase account** and project setup
 
 ## Installation
